@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "285190576655",
+    "project_id": "farm-bandi",
+    "storage_bucket": "farm-bandi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285190576655:android:256ae5ecf24cd5aa38217a",
+        "android_client_info": {
+          "package_name": "com.application.farmbandi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285190576655-rp1mfcls3gaqdjavvqhrakf9lu2b6goe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-4Ce2FWbO6ruKrO7NOZ1vvf70MxE7xSE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285190576655-rp1mfcls3gaqdjavvqhrakf9lu2b6goe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

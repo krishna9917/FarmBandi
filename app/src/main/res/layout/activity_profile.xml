@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="driver"
+            type="com.application.farmbandi.model.DeliveryBoy" />
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="15dp"
+        android:paddingTop="10dp"
+        tools:context=".Activities.Profile.ProfileActivity">
+
+
+        <ImageView
+            android:id="@+id/imgBack"
+            style="@style/Style_RippleEffect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/imgLogout"
+            style="@style/Style_RippleEffect"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgBack">
+
+            <TextView
+                style="@style/Style_bold_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/profile"
+                android:textSize="19sp" />
+
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/cvProfile"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            app:cardBackgroundColor="@color/color_gray_20"
+                            app:cardCornerRadius="100dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:strokeColor="@color/color_theme_5"
+                            app:strokeWidth="1dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:netImageSrc="@{driver.profile_pic_url}" />
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginEnd="-8dp"
+                            android:layout_marginBottom="10dp"
+                            app:cardBackgroundColor="@color/color_theme_100"
+                            app:cardCornerRadius="100dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintBottom_toBottomOf="@id/cvProfile"
+                            app:layout_constraintEnd_toEndOf="@id/cvProfile">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="4dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/ic_edit" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <TextView
+                        style="@style/Style_regular_font"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Hello," />
+
+                    <TextView
+                        style="@style/Style_medium_font"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@{driver.full_name}"
+                        android:textSize="21sp" />
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Style_ProfileButtons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="25dp"
+                            android:paddingVertical="10dp">
+
+                            <TextView
+                                style="@style/Style_regular_font"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="15dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/my_jobs"
+                                android:textSize="18sp"
+                                app:drawableEndCompat="@drawable/ic_arrow_right"
+                                app:drawableStartCompat="@drawable/ic_jobs" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="15dp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/management"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvJobRelatedSettings"
+                        style="@style/Style_ProfileButtons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="25dp"
+                            android:paddingVertical="10dp">
+
+                            <TextView
+                                style="@style/Style_regular_font"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="15dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/job_related_settings"
+                                android:textSize="18sp"
+                                app:drawableEndCompat="@drawable/ic_arrow_right"
+                                app:drawableStartCompat="@drawable/ic_job_setting" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Style_ProfileButtons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="25dp"
+                            android:paddingVertical="10dp">
+
+                            <TextView
+                                style="@style/Style_regular_font"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:drawablePadding="15dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/notifications"
+                                android:textSize="18sp"
+                                app:drawableStartCompat="@drawable/ic_bell_ring" />
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                app:cardCornerRadius="15dp">
+
+                                <Switch
+                                    android:id="@+id/notificationSwitch"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:track="@color/transparent"
+                                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+                            </androidx.cardview.widget.CardView>
+
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvMyInfo"
+                        style="@style/Style_ProfileButtons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="25dp"
+                            android:paddingVertical="10dp">
+
+                            <TextView
+                                style="@style/Style_regular_font"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="15dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/my_information"
+                                android:textSize="18sp"
+                                app:drawableEndCompat="@drawable/ic_arrow_right"
+                                app:drawableStartCompat="@drawable/ic_edit_square" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Style_ProfileButtons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="25dp"
+                            android:paddingVertical="10dp">
+
+                            <TextView
+                                style="@style/Style_regular_font"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="15dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/wallet"
+                                android:textSize="18sp"
+                                app:drawableEndCompat="@drawable/ic_arrow_right"
+                                app:drawableStartCompat="@drawable/ic_wallet" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="15dp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/support"
+                        android:textAllCaps="true"
+                        android:textSize="10sp"
+                        tools:ignore="SmallSp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Style_ProfileButtons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="25dp"
+                            android:paddingVertical="10dp">
+
+                            <TextView
+                                style="@style/Style_regular_font"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="15dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/help"
+                                android:textSize="18sp"
+                                app:drawableEndCompat="@drawable/ic_arrow_right"
+                                app:drawableStartCompat="@drawable/ic_help" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        style="@style/Style_ProfileButtons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="25dp"
+                            android:paddingVertical="10dp">
+
+                            <TextView
+                                style="@style/Style_regular_font"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="15dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/support"
+                                android:textSize="18sp"
+                                app:drawableEndCompat="@drawable/ic_arrow_right"
+                                app:drawableStartCompat="@drawable/ic_chat" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

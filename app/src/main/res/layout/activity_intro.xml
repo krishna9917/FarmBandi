@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Activities.Intro.IntroActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+        <ImageView
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:src="@drawable/img_intro_bg1"
+            android:layout_width="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="-5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="3dp"
+            android:layout_height="match_parent"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="match_parent"
+            android:id="@+id/vpIntro"
+            android:layout_marginVertical="120dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_height="match_parent"/>
+
+
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+            android:id="@+id/dots_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:dotsColor="@color/color_theme_60"
+            app:dotsCornerRadius="3dp"
+            app:dotsSize="6dp"
+            app:dotsSpacing="4dp"
+            android:layout_marginVertical="10dp"
+            android:layout_gravity="center"
+            app:dotsWidthFactor="5"
+            app:layout_constraintTop_toBottomOf="@id/vpIntro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:selectedDotColor="@color/color_theme_100" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:padding="50dp"
+        android:layout_height="match_parent">
+
+
+<!--        <TextView-->
+<!--            android:textSize="20sp"-->
+<!--            style="@style/Style_bold_font"-->
+<!--            android:id="@+id/txtTitle"-->
+<!--            android:text="@string/intro_screen1_title"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+
+
+<!--        <TextView-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            style="@style/Style_regular_font"-->
+<!--            android:text="@string/intro_screen_desc"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+
+
+        <include
+            android:id="@+id/llGetStartBtn"
+            android:layout_marginTop="50dp"
+            android:layout_height="62dp"
+            android:btnText="@{@string/get_started}"
+            android:layout_width="match_parent"
+            layout="@layout/layout_common_button"/>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</layout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+
+<!--    theme color-->
+    <color name="color_theme_100">#0e387a</color>
+    <color name="color_theme_80">#AD0E387A</color>
+    <color name="color_theme_60">#740E387A</color>
+    <color name="color_theme_5">#e7eaee</color>
+
+
+
+
+    <color name="transparent">#00000000</color>
+
+
+
+<!--    gray color -->
+    <color name="color_gray_100">#7A7878</color>
+    <color name="color_gray_90">#979797</color>
+    <color name="color_gray_80">#979797</color>
+    <color name="color_gray_75">#F0898989</color>
+    <color name="color_gray_60">#B9A9ACAC</color>
+    <color name="color_gray_20">#757A7878</color>
+    <color name="color_gray_15">#547A7878</color>
+    <color name="color_gray_10">#227A7878</color>
+    <color name="color_gray_8">#167A7878</color>
+    <color name="color_gray_5">#0A7A7878</color>
+    <color name="color_gray_4">#f3f3f3</color>
+    <color name="color_gray_3">#9CFFFCFC</color>
+    <color name="color_gray_2">#BFFFFCFC</color>
+
+
+
+
+<!--    Orange color-->
+    <color name="color_orange_100">#FF9800</color>
+
+
+
+
+<!--    Green color-->
+    <color name="color_green_100">#E10AAA0A</color>
+
+
+
+<!--    Blue color-->
+    <color name="color_blue_100">#0e387a</color>
+
+
+<!--    Blueish color-->
+    <color name="color_blueish_100">#75CED4</color>
+
+
+
+</resources>

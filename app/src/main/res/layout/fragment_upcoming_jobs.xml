@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="showEmptyLayout"
+            type="Boolean" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:id="@+id/llRefresh"
+        android:layout_height="match_parent"
+        tools:context=".Fragments.CompletedJob.CompletedJobFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <include layout="@layout/layout_no_item_found"
+                    android:layout_height="match_parent"
+                    android:icon="@{@drawable/img_job_upcoming}"
+                    android:layoutVisibility="@{showEmptyLayout}"
+                    android:message='@{@string/no_upcoming_job}'
+                    android:subMessage='@{@string/no_upcoming_job_yet}'
+                    android:layout_width="match_parent"/>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvJobs"
+                    android:layout_marginHorizontal="18dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <include
+                    android:id="@+id/clPageProgress"
+                    layout="@layout/layout_pagination_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp" />
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</layout>

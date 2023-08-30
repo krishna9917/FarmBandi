@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="android.graphics.drawable.ColorDrawable" />
+        <import type="android.content.Context" />
+        <import type="android.content.res.ColorStateList"/>
+        <import type="androidx.core.content.ContextCompat"/>
+        <variable
+            name="isProgress"
+            type="Boolean" />
+
+        <variable
+            name="isDisabled"
+            type="Boolean" />
+
+        <variable
+            name="btnText"
+            type="String" />
+
+        <variable
+            name="btnIcon"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="btnTextSize"
+            type="float"/>
+
+        <variable
+            name="btnTextColor"
+            type="int" />
+
+        <variable
+            name="btnColor"
+            type="int" />
+
+
+        <variable
+            name="context" type="Context" />
+
+    </data>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:clickable="@{!isDisabled}"
+        android:id="@+id/btn"
+        app:cardElevation="@{!isDisabled?@dimen/three_dp : @dimen/two_dp}"
+        android:focusable="@{!isDisabled}"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@{btnColor!=0? context.getResources().getColor(btnColor):@color/color_theme_100}">
+
+
+
+
+            <TextView
+                style="@style/Style_bold_font"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="@{btnText,default=@string/Continue}"
+                android:id="@+id/txtBtn"
+                android:textSize='@{btnTextSize!=0f? btnTextSize :18f}'
+                android:gravity="center"
+                android:textColor="@{btnTextColor!=0? context.getResources().getColor(btnTextColor):@color/white}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <View
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:visibility="@{isProgress || isDisabled?View.VISIBLE:View.GONE}"
+                android:background="@color/color_gray_3"
+                android:layout_height="match_parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

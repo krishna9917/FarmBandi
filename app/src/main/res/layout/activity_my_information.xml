@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+        <variable
+            name="driverProfile"
+            type="com.application.farmbandi.model.DeliveryBoy" />
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Activities.MyInformation.MyInformationActivity">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+
+
+
+        <ImageView
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:src="@drawable/img_intro_bg1"
+            android:layout_width="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="-5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="3dp"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:id="@+id/img"
+            android:layout_marginVertical="50dp"
+            android:src="@drawable/img_intro3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_height="match_parent"/>
+
+
+        <ImageView
+            android:id="@+id/imgBack"
+            style="@style/Style_RippleEffect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="0.9"
+        android:orientation="vertical"
+        android:paddingHorizontal="40dp"
+        android:layout_marginTop="20dp"
+        android:paddingVertical="10dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="@string/my_information"
+            style="@style/Style_bold_font"
+            android:textSize="19sp"
+            android:layout_height="wrap_content"/>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:fillViewport="true"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:paddingStart="10dp"
+                android:layout_height="match_parent"
+                tools:ignore="RtlSymmetry">
+
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:src="@drawable/ic_ticket_star"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_circle"
+                        android:layout_height="40dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtFullNameLayout"
+                        style="@style/Style_TextTextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:textColorHint="@color/color_theme_100"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <EditText
+                            android:id="@+id/edtFullName"
+                            style="@style/style_editText"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:background="@color/transparent"
+                            android:layout_width="match_parent"
+                            android:text="@{driverProfile.full_name}"
+                            android:layout_height="match_parent"
+                            android:hint="@string/full_name" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:src="@drawable/ic_mobile"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_circle"
+                        android:layout_height="40dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtMobileLayout"
+                        style="@style/Style_TextTextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:textColorHint="@color/color_theme_100"
+                        android:layout_weight="1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <EditText
+                            android:id="@+id/edtMobile"
+                            style="@style/style_editText"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:background="@color/transparent"
+                            android:layout_width="match_parent"
+                            android:text="@{driverProfile.mobile}"
+                            android:layout_height="match_parent"
+                            android:hint="@string/mobile" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:src="@drawable/ic_email"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_circle"
+                        android:layout_height="40dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtEmailLayout"
+                        style="@style/Style_TextTextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:textColorHint="@color/color_theme_100"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <EditText
+                            android:id="@+id/edtEmail"
+                            style="@style/style_editText"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:background="@color/transparent"
+                            android:layout_width="match_parent"
+                            android:text="@{driverProfile.email}"
+                            android:layout_height="match_parent"
+                            android:hint="@string/email" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:src="@drawable/ic_calendar1"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_circle"
+                        android:layout_height="40dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtDobLayout"
+                        style="@style/Style_TextTextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:textColorHint="@color/color_theme_100"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <EditText
+                            android:id="@+id/edtDob"
+                            style="@style/style_editText"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:background="@color/transparent"
+                            android:layout_width="match_parent"
+                            android:text="@{driverProfile.dob}"
+                            android:layout_height="match_parent"
+                            android:hint="@string/dob" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:src="@drawable/ic_location"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_circle"
+                        android:layout_height="40dp"
+                        app:tint="@color/white" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtCityLayout"
+                        style="@style/Style_TextTextInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:textColorHint="@color/color_theme_100"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <EditText
+                            android:id="@+id/edtCity"
+                            style="@style/style_editText"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:background="@color/transparent"
+                            android:layout_width="match_parent"
+                            android:text="@{driverProfile.city_name}"
+                            android:layout_height="match_parent"
+                            android:hint="@string/city" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+</layout>

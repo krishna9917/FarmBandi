@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="driverData"
+            type="com.application.farmbandi.model.DeliveryBoy" />
+
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activities.Home.HomeActivity">
+
+
+        <ImageView
+            android:id="@+id/imgMenu"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            style="@style/Style_RippleEffect"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/color_theme_5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:netImageSrc="@{driverData.profile_pic_url}"
+                android:src="@color/color_theme_60" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:id="@+id/tabs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgMenu">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtName"
+                    style="@style/Style_bold_font"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{"Hello,\n"+driverData.first_name}'
+                    android:textSize="28sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/img_hand"
+                    app:layout_constraintBottom_toBottomOf="@id/txtName"
+                    app:layout_constraintStart_toEndOf="@id/txtName" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:id="@+id/tabOnlineOffline"
+                android:background="@drawable/bg_unselected_tab"
+                app:tabBackground="@drawable/tab_color_selector"
+                app:tabIndicatorHeight="0dp"
+                app:tabGravity="fill"
+                app:tabSelectedTextColor="@color/color_theme_100"
+                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget">
+
+                <com.google.android.material.tabs.TabItem
+                    style="@style/Style_regular_font"
+                    android:layout_width="match_parent"
+                    android:id="@+id/tabOffline"
+                    android:layout_height="wrap_content"
+                    android:text="@string/offline" />
+
+
+                <com.google.android.material.tabs.TabItem
+                    style="@style/Style_regular_font"
+                    android:layout_width="match_parent"
+                    android:id="@+id/tabOnline"
+                    android:layout_height="wrap_content"
+                    android:text="@string/online" />
+
+
+            </com.google.android.material.tabs.TabLayout>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/job_list"
+                android:textSize="19sp"
+                android:layout_marginTop="35dp"
+                style="@style/Style_medium_font"
+                android:textAllCaps="true" />
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                app:tabGravity="fill"
+                android:id="@+id/tabJob"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/bg_unselected_tab"
+                app:tabBackground="@drawable/tab_color_selector"
+                app:tabIndicatorHeight="0dp"
+                app:tabSelectedTextColor="@color/color_theme_100"
+                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"/>
+        </LinearLayout>
+
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tabs"
+            android:layout_marginTop="10dp"
+            android:id="@+id/vpJobs"
+            android:layout_height="0dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

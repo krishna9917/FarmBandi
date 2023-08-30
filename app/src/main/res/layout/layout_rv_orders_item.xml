@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/color_theme_100"
+            app:strokeWidth="0.8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Style_medium_font"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="#634782634623" />
+
+                    <TextView
+                        style="@style/Style_regular_font"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Jan 15,2023 at 6:00 PM" />
+
+                </LinearLayout>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:id="@+id/tabOrderOperation"
+                    android:background="@drawable/bg_unselected_tab"
+                    app:tabBackground="@drawable/tab_color_selector"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabSelectedTextColor="@color/color_theme_100"
+                    app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget">
+
+                    <com.google.android.material.tabs.TabItem
+                        style="@style/Style_regular_font"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/accept" />
+
+                    <com.google.android.material.tabs.TabItem
+                        style="@style/Style_regular_font"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reject" />
+
+                </com.google.android.material.tabs.TabLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
